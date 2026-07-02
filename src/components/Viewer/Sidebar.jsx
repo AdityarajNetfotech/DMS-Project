@@ -25,7 +25,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="hidden h-screen w-[280px] shrink-0 flex-col border-r border-slate-200 bg-white lg:flex">
+    <aside className="hidden h-screen w-[280px] shrink-0 flex-col border-r border-slate-200 bg-white lg:flex sticky top-0">
       <div className="flex h-[82px] items-center gap-3 border-b border-slate-200 px-5">
         <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm">
           <FileText size={25} fill="currentColor" strokeWidth={1.8} />
