@@ -165,7 +165,7 @@ export default function Sidebar() {
           <button
             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-red-500 hover:bg-red-50"
             onClick={() => {
-              window.location.href = "http://localhost:5173/login";
+              window.location.href = "https://dms-project-lac.vercel.app/login";
             }}
             type="button"
           >

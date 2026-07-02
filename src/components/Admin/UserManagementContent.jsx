@@ -9,7 +9,7 @@ import {
   Plus,
 } from "lucide-react";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5004";
+const API_BASE_URL = import.meta.env.VITE_API_URL ;
 
 export default function UserManagementContent() {
   const [mfaEnabled, setMfaEnabled] = useState(true);
