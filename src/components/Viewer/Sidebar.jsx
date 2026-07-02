@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { useNavigate} from "react-router-dom"
 
 const navItems = [
   { name: "Dashboard", icon: Home, path: "/viewer/dashboard" },
@@ -24,6 +25,7 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const navigate = useNavigate();
   return (
     <aside className="hidden h-screen lg:flex sticky top-0 w-[280px] shrink-0 flex-col border-r border-slate-200 bg-white">
       <div className="flex h-[82px] items-center gap-3 border-b border-slate-200 px-5">
@@ -97,18 +99,20 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <div className="border-t border-slate-200 pt-4">
-        <button
-          type="button"
-          className="w-full flex items-center gap-4 px-8 text-sm font-medium text-red-500 transition hover:bg-red-50"
-          onClick={() => {
-            window.location.href = "http://localhost:5173/login";
-          }}
-        >
-          <ChevronLeft size={20} />
-          Logout
-        </button>
-      </div>
+       <div className="border-t border-slate-200 pt-4">
+      <button
+        type="button"
+        className="w-full flex items-center gap-4 px-8 text-sm font-medium text-red-500 transition hover:bg-red-50"
+        onClick={() => {
+          // Clear token/session if needed
+          localStorage.removeItem("token");
+          navigate("/login");
+        }}
+      >
+        <ChevronLeft size={20} />
+        Logout
+      </button>
+    </div>
 
       
     </aside>
